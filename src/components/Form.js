@@ -13,20 +13,21 @@ const Form=({updateText,text,todo,updateTodo})=>{
         event.preventDefault();
         updateTodo([...todo,{text:text}]);
         console.log(todo);
+        updateText("");
     }
     return(
         <form>
-            <input onChange={textHandler} type="text" className="todo-input"/>
+            <input value={text} onChange={textHandler} type="text" className="todo-input"/>
             <button onClick={todoHandler} className="todo-button" type="submit" >Submit
 
             </button>
-            <div className="select">
+            {/* <div className="select">
                 <select name="todos" className="filter-todo">
                 <option value="all">All</option>
                 <option value="completed">completed</option>
                 <option value="uncomplete">Uncomplete</option>
                 </select>
-            </div>
+            </div> */}
         </form>
 
     );
